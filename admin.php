@@ -80,8 +80,18 @@ if (!isset($_SESSION['username'])) {
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?page=article">Article</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.php?page=gallery">Gallery</a>
             </li> 
-            <li class="nav-item dropdown">
+            <?php
+            $admin_users = ['admin', 'danny'];
+            if (in_array($_SESSION['username'], $admin_users)):
+            ?>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.php?page=user">User</a>
+            </li>
+            <?php endif; ?>            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-danger fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <?= $_SESSION['username']?>
                 </a>
@@ -123,7 +133,7 @@ if (!isset($_SESSION['username'])) {
         ><i class="bi bi-youtube h2 p-2 text-dark" ></i
         ></a>
     </div>
-    <div>Azhar Syamsudin Abimanyu &copy; 2023</div>
+    <div>Azhar Syamsudin Abimanyu &copy; 2024</div>
     </footer>
     <!-- footer end -->
     <script
