@@ -305,24 +305,24 @@ include "koneksi.php";
             </div>
         </section>
 
-        <section id="gallery" class="text-center p-5">
-        <div class="container">
-            <h1 class="fw-bold display-4 pb-3">Gallery</h1>
-            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-            <?php
-            $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
-            $hasil = $conn->query($sql); 
-
-            while($row = $hasil->fetch_assoc()){
-            ?>
-                <div class="col">
-                    <img src="img/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
-                </div>
+                <section id="gallery" class="text-center p-5">
+            <div class="container">
+                <h3 class="text-center mb-3">Gallery</h3>
+        
+                <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
                 <?php
-            }
-            ?> 
+                $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
+                $hasil = $conn->query($sql); 
+        
+                while($row = $hasil->fetch_assoc()){
+                ?>
+                    <div class="col">
+                        <img src="img/<?= $row["gambar"]?>" class="img-fluid rounded" alt="">
+                    </div>
+                <?php } ?>
+                </div>
+        
             </div>
-        </div>
         </section>
 
 
